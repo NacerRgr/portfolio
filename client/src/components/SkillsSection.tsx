@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { programmingSkills, webDevSkills, backendCloudSkills, devOpsSkills, designSkills, dataSkills } from "@/lib/constants";
+import { Badge } from "@/components/ui/badge";
 
 interface SkillCardProps {
   title: string;
@@ -31,23 +32,15 @@ function SkillCard({ title, icon, skills, delay }: SkillCardProps) {
         <h3 className="text-xl font-semibold font-inter dark:text-white">{title}</h3>
       </div>
       
-      <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
-          <div key={index}>
-            <div className="flex justify-between mb-1">
-              <span className="font-medium dark:text-gray-200">{skill.name}</span>
-              <span className="dark:text-gray-300">{skill.percentage}%</span>
-            </div>
-            <div className="progress-bar">
-              <div 
-                className="progress" 
-                style={{ 
-                  width: isInView ? `${skill.percentage}%` : "0%",
-                  transitionDelay: `${index * 0.1}s`
-                }}
-              ></div>
-            </div>
-          </div>
+          <Badge 
+            key={index}
+            variant="outline" 
+            className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-800 dark:hover:bg-blue-800/40 py-1.5 px-3"
+          >
+            {skill.name}
+          </Badge>
         ))}
       </div>
     </motion.div>
