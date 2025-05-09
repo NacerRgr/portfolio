@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/lib/constants";
 
@@ -9,11 +8,24 @@ interface ProjectCardProps {
   tags: string[];
   github?: string;
   details?: string;
-  private?: boolean;
+  category?: string;
   index: number;
 }
 
-function ProjectCard({ title, description, tags, github, details, private: isPrivate, index }: ProjectCardProps) {
+function ProjectCard({ title, description, tags, github, details, category, index }: ProjectCardProps) {
+  // Choose icon based on project category
+  const getCategoryIcon = (category: string = "software") => {
+    switch (category) {
+      case "data":
+        return "fa-database";
+      case "iot":
+        return "fa-microchip";
+      case "software":
+      default:
+        return "fa-code";
+    }
+  };
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -25,7 +37,7 @@ function ProjectCard({ title, description, tags, github, details, private: isPri
       <div className="p-6">
         <div className="flex items-center mb-4">
           <div className="w-10 h-10 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mr-4">
-            <i className="fas fa-code-branch text-primary dark:text-blue-400"></i>
+            <i className={`fas ${getCategoryIcon(category)} text-primary dark:text-blue-400`}></i>
           </div>
           <h3 className="text-xl font-semibold font-inter dark:text-white">{title}</h3>
         </div>
@@ -46,12 +58,10 @@ function ProjectCard({ title, description, tags, github, details, private: isPri
               <i className="fas fa-arrow-right ml-1 text-sm"></i>
             </a>
           )}
-          {github ? (
+          {github && (
             <a href={github} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
               <i className="fab fa-github text-xl"></i>
             </a>
-          ) : (
-            <span className="text-gray-400 dark:text-gray-500 text-sm">{isPrivate ? "Private Repository" : ""}</span>
           )}
         </div>
       </div>
@@ -84,6 +94,7 @@ export default function ProjectsSection() {
               tags={project.tags}
               github={project.github}
               details={project.details}
+              category={project.category}
               index={index}
             />
           ))}

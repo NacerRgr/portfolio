@@ -68,47 +68,58 @@ export const dataSkills = [
 
 // Projects Data
 export const projects = [
-  {
-    title: "Data Lakehouse for Medical Data Marts",
-    description: "Designed and developed a data lakehouse integrating medical data from various sources, implementing an ELT process with Airbyte and dbt on DigitalOcean.",
-    tags: ["SQL", "DBT", "Airbyte", "Docker", "PostgreSQL", "DigitalOcean", "Git", "GitLab"],
-    github: "https://github.com/NacerRgr",
-    details: "#"
-  },
-  {
-    title: "Telegram Weather Bot",
-    description: "A Telegram chatbot that integrates weather data provision and random joke generation based on user requests with real-time polling.",
-    tags: ["Java", "Spring Boot", "REST API", "Telegram API"],
-    github: "https://github.com/NacerRgr",
-    details: "#"
-  },
+  // Software Engineering Projects
   {
     title: "Ecommerce Website 'Ez Buy'",
     description: "Developed a fully functional perfume e-commerce website with complete product management, user authentication, and checkout functionality.",
     tags: ["ReactJS", "Spring Boot", "Spring Security", "PostgreSQL", "JPA", "Git"],
     github: "https://github.com/NacerRgr",
-    details: "#"
+    details: "#",
+    category: "software"
   },
   {
     title: "BRICOLIYA Service Marketplace",
     description: "A service marketplace web application connecting professionals and clients to facilitate interactions and service exchanges.",
     tags: ["Java EE", "MySQL", "Design Patterns", "JSP/JSTL"],
     github: "https://github.com/NacerRgr",
-    details: "#"
-  },
-  {
-    title: "Smart Home Prototype",
-    description: "Developed an IoT-based smart home prototype controlled remotely via a mobile app, using Arduino for sensors and Raspberry Pi for data transmission.",
-    tags: ["IoT", "Arduino", "Raspberry Pi", "Python", "C++", "Firebase"],
-    github: "https://github.com/NacerRgr",
-    details: "#"
+    details: "#",
+    category: "software"
   },
   {
     title: "Sensor Visualization Web App",
     description: "Interactive interface with ReactJS featuring real-time visualization through dynamic charts, auto-refreshing tables, and complete REST API integration.",
     tags: ["ReactJS", "WebSocket", "REST API", "MQTT"],
     github: "https://github.com/NacerRgr",
-    details: "#"
+    details: "#",
+    category: "software"
+  },
+  {
+    title: "Telegram Weather Bot",
+    description: "A Telegram chatbot that integrates weather data provision and random joke generation based on user requests with real-time polling.",
+    tags: ["Java", "Spring Boot", "REST API", "Telegram API"],
+    github: "https://github.com/NacerRgr",
+    details: "#",
+    category: "software"
+  },
+  
+  // Data Engineering Project
+  {
+    title: "Data Lakehouse for Medical Data Marts",
+    description: "Designed and developed a data lakehouse integrating medical data from various sources, implementing an ELT process with Airbyte and dbt on DigitalOcean.",
+    tags: ["SQL", "DBT", "Airbyte", "Docker", "PostgreSQL", "DigitalOcean", "Git", "GitLab"],
+    github: "https://github.com/NacerRgr",
+    details: "#",
+    category: "data"
+  },
+  
+  // IoT Project
+  {
+    title: "Smart Home Prototype",
+    description: "Developed an IoT-based smart home prototype controlled remotely via a mobile app, using Arduino for sensors and Raspberry Pi for data transmission.",
+    tags: ["IoT", "Arduino", "Raspberry Pi", "Python", "C++", "Firebase"],
+    github: "https://github.com/NacerRgr",
+    details: "#",
+    category: "iot"
   }
 ];
 
