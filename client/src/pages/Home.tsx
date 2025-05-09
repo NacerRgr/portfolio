@@ -10,7 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { useScrollspy } from "@/lib/useScrollspy";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ThemeSwitcher from "@/components/ThemeSwitcher/index";
 
 export default function Home() {
   const activeSection = useScrollspy();
