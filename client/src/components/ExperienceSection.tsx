@@ -38,28 +38,28 @@ function TimelineItem({
         {year}
       </div>
       
-      <Card className={`ml-8 md:ml-0 shadow-md`}>
+      <Card className={`ml-8 md:ml-0 shadow-md dark:bg-gray-700 dark:border-gray-600`}>
         <CardContent className="p-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-            <h3 className="text-xl font-semibold font-inter">{position}</h3>
-            <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-2 md:mt-0">Internship</Badge>
+            <h3 className="text-xl font-semibold font-inter dark:text-white">{position}</h3>
+            <Badge variant="outline" className="bg-blue-100 text-blue-800 mt-2 md:mt-0 dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-700">Internship</Badge>
           </div>
           <div className="flex items-center mb-4">
-            <i className="fas fa-building text-gray-400 mr-2"></i>
-            <span className="text-gray-700">{company}, {location}</span>
+            <i className="fas fa-building text-gray-400 dark:text-gray-300 mr-2"></i>
+            <span className="text-gray-700 dark:text-gray-300">{company}, {location}</span>
           </div>
           <div className="flex items-center mb-4">
-            <i className="fas fa-calendar text-gray-400 mr-2"></i>
-            <span className="text-gray-700">{period}</span>
+            <i className="fas fa-calendar text-gray-400 dark:text-gray-300 mr-2"></i>
+            <span className="text-gray-700 dark:text-gray-300">{period}</span>
           </div>
-          <ul className="list-disc pl-5 text-gray-600 space-y-2 mb-4">
+          <ul className="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2 mb-4">
             {responsibilities.map((responsibility, i) => (
               <li key={i}>{responsibility}</li>
             ))}
           </ul>
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, i) => (
-              <Badge key={i} variant="secondary" className="bg-gray-100 text-gray-800">
+              <Badge key={i} variant="secondary" className="bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200">
                 {tech}
               </Badge>
             ))}
@@ -72,7 +72,7 @@ function TimelineItem({
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-16 md:py-24 bg-gray-50 relative">
+    <section id="experience" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800 relative">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -81,9 +81,9 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold">Professional Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-inter font-bold dark:text-white">Professional Experience</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-2 mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-600">My journey and professional experience in the tech industry</p>
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">My journey and professional experience in the tech industry</p>
         </motion.div>
         
         <div className="timeline-container relative">

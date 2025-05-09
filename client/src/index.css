@@ -111,7 +111,7 @@
   }
 
   .navbar {
-    @apply bg-white/95 backdrop-blur-sm;
+    @apply bg-white/95 backdrop-blur-sm dark:bg-gray-800/95 dark:backdrop-blur-sm;
   }
 
   .hide-scroll-bar {
@@ -121,6 +121,14 @@
 
   .hide-scroll-bar::-webkit-scrollbar {
     display: none;
+  }
+  
+  .progress-bar {
+    @apply dark:bg-gray-700;
+  }
+  
+  .timeline-container::before {
+    @apply dark:bg-gray-700;
   }
 }
 
