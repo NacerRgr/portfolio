@@ -6,7 +6,6 @@ import { projects } from "@/lib/constants";
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string;
   tags: string[];
   github?: string;
   details?: string;
@@ -14,7 +13,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-function ProjectCard({ title, description, image, tags, github, details, private: isPrivate, index }: ProjectCardProps) {
+function ProjectCard({ title, description, tags, github, details, private: isPrivate, index }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -82,11 +81,9 @@ export default function ProjectsSection() {
               key={index}
               title={project.title}
               description={project.description}
-              image={project.image}
               tags={project.tags}
               github={project.github}
               details={project.details}
-              private={project.private}
               index={index}
             />
           ))}
