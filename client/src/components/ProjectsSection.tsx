@@ -23,32 +23,13 @@ function ProjectCard({ title, description, image, tags, github, details, private
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
     >
-      <div className="h-48 overflow-hidden">
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 800 400"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-          className="w-full h-full object-cover object-center"
-        >
-          <rect width="800" height="400" fill="#f8fafc" className="dark:fill-gray-700" />
-          <path
-            d={image}
-            fill="#2563eb22"
-            className="dark:fill-blue-500/20"
-            transform="translate(400, 200)"
-          />
-          <path
-            d={image}
-            fill="#2563eb44"
-            className="dark:fill-blue-500/30"
-            transform="translate(400, 200) scale(0.8)"
-          />
-        </svg>
-      </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 font-inter dark:text-white">{title}</h3>
+        <div className="flex items-center mb-4">
+          <div className="w-10 h-10 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+            <i className="fas fa-code-branch text-primary dark:text-blue-400"></i>
+          </div>
+          <h3 className="text-xl font-semibold font-inter dark:text-white">{title}</h3>
+        </div>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
@@ -59,7 +40,7 @@ function ProjectCard({ title, description, image, tags, github, details, private
             ))}
           </div>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-6">
           {details && (
             <a href={details} className="text-primary hover:text-primary/80 dark:text-blue-400 dark:hover:text-blue-300 font-medium inline-flex items-center">
               <span>View Details</span>
