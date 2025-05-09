@@ -19,7 +19,7 @@ function EducationCard({ title, institution, location, period, description, inde
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div className="h-32 bg-gradient">
         <div className="h-full flex items-center justify-center">
@@ -29,19 +29,19 @@ function EducationCard({ title, institution, location, period, description, inde
       <div className="p-6">
         <div className="mb-4">
           <div className="flex items-center mb-2">
-            <i className="fas fa-university text-gray-500 mr-2"></i>
-            <span className="text-gray-800 font-medium">{institution}</span>
+            <i className="fas fa-university text-gray-500 dark:text-gray-400 mr-2"></i>
+            <span className="text-gray-800 dark:text-gray-200 font-medium">{institution}</span>
           </div>
           <div className="flex items-center mb-2">
-            <i className="fas fa-map-marker-alt text-gray-500 mr-2"></i>
-            <span className="text-gray-700">{location}</span>
+            <i className="fas fa-map-marker-alt text-gray-500 dark:text-gray-400 mr-2"></i>
+            <span className="text-gray-700 dark:text-gray-300">{location}</span>
           </div>
           <div className="flex items-center">
-            <i className="fas fa-calendar-alt text-gray-500 mr-2"></i>
-            <span className="text-gray-700">{period}</span>
+            <i className="fas fa-calendar-alt text-gray-500 dark:text-gray-400 mr-2"></i>
+            <span className="text-gray-700 dark:text-gray-300">{period}</span>
           </div>
         </div>
-        <p className="text-gray-600">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300">{description}</p>
       </div>
     </motion.div>
   );
