@@ -30,9 +30,9 @@ export default function Navbar({ activeSection }: NavbarProps) {
   };
 
   return (
-    <nav id="navbar" className={`navbar fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
+    <nav id="navbar" className={`navbar fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'} dark:bg-gray-800/95 dark:backdrop-blur-sm dark:border-b dark:border-gray-700`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-primary">
+        <a href="#home" className="text-2xl font-bold text-primary dark:text-blue-400">
           <span className="font-inter">MNE</span>
         </a>
         
@@ -42,7 +42,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
             <a 
               key={link.id}
               href={link.href}
-              className={`transition-colors ${activeSection === link.id ? 'text-primary' : 'hover:text-primary'}`}
+              className={`transition-colors dark:text-gray-200 ${activeSection === link.id ? 'text-primary dark:text-blue-400' : 'hover:text-primary dark:hover:text-blue-300'}`}
             >
               {link.text}
             </a>
@@ -52,7 +52,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMobileMenu}
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
@@ -67,14 +67,14 @@ export default function Navbar({ activeSection }: NavbarProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg absolute w-full"
+            className="md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full"
           >
             <div className="px-4 py-3 space-y-3">
               {navLinks.map((link) => (
                 <a 
                   key={link.id}
                   href={link.href} 
-                  className={`block py-2 transition-colors ${activeSection === link.id ? 'text-primary' : 'hover:text-primary'}`}
+                  className={`block py-2 transition-colors dark:text-gray-200 ${activeSection === link.id ? 'text-primary dark:text-blue-400' : 'hover:text-primary dark:hover:text-blue-300'}`}
                   onClick={closeMobileMenu}
                 >
                   {link.text}

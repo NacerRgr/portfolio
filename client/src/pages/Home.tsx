@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { useScrollspy } from "@/lib/useScrollspy";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   const activeSection = useScrollspy();
@@ -20,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen dark:bg-gray-900 dark:text-white">
       <Navbar activeSection={activeSection} />
       
       <main className="flex-grow">
@@ -35,6 +36,7 @@ export default function Home() {
       
       <Footer />
       <BackToTop />
+      <ThemeSwitcher />
     </div>
   );
 }
